@@ -1,0 +1,131 @@
+/* 全站阅读尺度；1rem 随浏览器默认字号缩放。 */
+:root {
+  --main-width: 780px;
+  --main-padding: 24px;
+  --blog-body-size: 1.125rem;
+  --blog-site-title-size: 1.75rem;
+  --blog-nav-size: 1rem;
+  --blog-meta-size: 0.875rem;
+  --blog-entry-size: 1.375rem;
+  --font-body: "Literata", "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
+  --font-ui: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --h1-font-size: 1.875rem;
+  --h2-font-size: 1.5rem;
+  --hx-font-size: 1.25rem;
+  --p-font-size: 1em;
+  --p-line-height: 1.85;
+  --p-margin-top: 1rem;
+  --p-margin-bottom: 1rem;
+  --h2-margin-top: 2.25rem;
+  --h2-margin-bottom: 1rem;
+  --hx-margin-top: 1.75rem;
+  --hx-margin-bottom: 0.75rem;
+  --code-border-radius: 4px;
+}
+body { font-size: var(--blog-body-size); line-height: var(--p-line-height); }
+a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:focus-visible, summary:focus-visible, button:focus-visible {
+  outline: 2px solid currentColor; outline-offset: 4px; border-radius: 2px;
+}
+[hidden] { display: none !important; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.45; overflow-wrap: anywhere; }
+h4 { font-size: 1.125rem; }
+h5, h6 { font-size: 1rem; }
+.heading { scroll-margin-top: 1.5rem; }
+.heading:focus-within .anchor { visibility: visible; }
+.header-title { font-size: var(--blog-site-title-size); line-height: 1.4; }
+.blog-header {
+  padding-top: 2.5rem; padding-bottom: 1.25rem; margin-bottom: 2rem;
+  border-bottom: 1px solid var(--code-border);
+}
+.blog-header .header-menu { gap: 0.25rem 1.75rem; padding-top: 0.75rem; }
+.blog-header .menu-link {
+  display: inline-flex; align-items: center; min-height: 44px; gap: 0.15em;
+  font-family: var(--font-ui); font-size: var(--blog-nav-size); line-height: 1.5;
+  color: var(--content-secondary); text-decoration: none; white-space: nowrap;
+}
+.blog-header .menu-link:hover, .blog-header .menu-link.is-active { color: var(--content-primary); }
+.blog-header .menu-link.is-active { font-weight: 700; }
+.menu-slash { color: var(--content-secondary); font-weight: 400; }
+.entry-meta, .single-date, .line-date, .breadcrumbs, .article-back,
+.back-to-top, .blog-pagination, footer {
+  font-family: var(--font-ui); font-size: var(--blog-meta-size); color: var(--content-secondary);
+}
+.main > h1, .essay-index > h1 { margin-top: 0; }
+.main > h1 + p, .essay-index > h1 + p { color: var(--content-secondary); }
+.list-container { padding-bottom: 1rem; }
+.essay-entry { margin-top: 2rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--code-border); }
+.essay-entry h2, .note-entry > header h2 {
+  margin: 0 0 0.65rem; font-size: var(--blog-entry-size); line-height: 1.5;
+}
+.essay-entry h2 a, .note-entry > header h2 a { text-decoration: none; }
+.essay-entry h2 a:hover, .note-entry > header h2 a:hover,
+.essay-entry h2 a:focus-visible, .note-entry > header h2 a:focus-visible { text-decoration: underline; }
+.essay-entry > p:not(.single-date) { margin: 0.65rem 0; }
+.essay-entry .single-date { margin-top: 0.75rem; line-height: 1.8; }
+.note-entry { padding: 1.75rem 0; border-bottom: 1px solid var(--code-border); }
+.note-entry .single-date { margin: 0 0 0.75rem; }
+.note-entry .note-content { margin-bottom: 0; }
+.note-content > :last-child { margin-bottom: 0; }
+.note-content > :first-child { margin-top: 0.75rem; }
+.article-back { margin: 0 0 1.25rem; }
+.article-back a { display: inline-flex; align-items: center; min-height: 32px; text-decoration: none; }
+.article-back a:hover { text-decoration: underline; }
+.single-intro-container { margin: 0 0 1.75rem; }
+.single-title { margin-top: 0; margin-bottom: 0.75rem; }
+.single-summary { font-size: 1em; margin: 0.75rem 0; }
+.article-dates { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin-top: 1rem; }
+.article-dates span { white-space: nowrap; }
+.article-toc {
+  margin: 1.5rem 0 2rem; padding: 0.8rem 0;
+  border-top: 1px solid var(--code-border); border-bottom: 1px solid var(--code-border);
+  font-family: var(--font-ui); font-size: 0.9375rem;
+}
+.article-toc summary { cursor: pointer; min-height: 32px; line-height: 32px; }
+.article-toc ul { margin: 0.75rem 0; }
+.article-toc li { margin-top: 0.25rem; }
+.article-toc a { text-decoration: none; }
+.article-toc a:hover { text-decoration: underline; }
+.reading-content { margin-bottom: 2rem; }
+.single-content { overflow-wrap: anywhere; }
+.single-content li + li { margin-top: 0.35rem; }
+.single-content pre { line-height: 1.6; max-width: 100%; overflow-x: auto; padding: 1rem; }
+.single-content pre code { overflow-wrap: normal; word-break: normal; }
+.single-content blockquote { border-left: 2px solid var(--code-border); margin: 1.5rem 0; }
+.single-content figure { margin: 1.75rem 0; }
+.single-content img { display: block; max-width: 100%; height: auto; margin-inline: auto; }
+.single-content figcaption { font-family: var(--font-ui); font-size: var(--blog-meta-size); line-height: 1.6; }
+.table-outer { overflow-x: auto; }
+hr { background: var(--code-border); }
+.back-to-top { margin: 2rem 0; text-align: left; }
+.back-to-top a { display: inline-flex; align-items: center; min-height: 44px; }
+.blog-pagination { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem 1rem; margin: 2rem 0; }
+.blog-pagination a { display: inline-flex; align-items: center; min-height: 44px; }
+footer { max-height: none; min-height: 3rem; padding: 1rem 0 1.5rem; text-align: center; }
+footer p { margin: 0; font-size: inherit; }
+footer a { font-family: inherit; }
+/* 可直接用于 Markdown 段落，保留既有写作方式。 */
+.single-content .text-small { font-size: 0.875em; }
+.single-content .text-large { font-size: 1.125em; }
+.single-content .text-center { text-align: center; }
+.single-content .text-muted { color: var(--content-secondary); }
+.single-content .lines-compact { line-height: 1.6; }
+.single-content .lines-loose { line-height: 2; }
+.single-content .space-after { margin-bottom: 2rem; }
+@media (max-width: 640px) {
+  :root {
+    --main-padding: 20px;
+    --blog-body-size: 1.0625rem;
+    --blog-site-title-size: 1.5rem;
+    --blog-entry-size: 1.25rem;
+    --h1-font-size: 1.625rem;
+    --h2-font-size: 1.375rem;
+    --hx-font-size: 1.125rem;
+  }
+  .blog-header { padding-top: 1.5rem; padding-bottom: 1rem; margin-bottom: 1.5rem; }
+  .blog-header .header-menu { column-gap: 1.25rem; }
+  .note-entry { padding: 1.5rem 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

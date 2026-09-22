@@ -1,0 +1,48 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  {{ $pages := .RegularPages.ByDate.Reverse }}
+  {{ $pageSize := .Site.Params.paginationSize | default 10 }}
+  {{ $paginator := .Paginate $pages $pageSize }}
+
+  {{ range $paginator.Pages }}
+    <article class="note-entry">
+      <header>
+        <p class="single-date">
+          {{ if .Params.hideTitle }}
+          <a href="{{ .RelPermalink }}" aria-label="阅读随笔：{{ .Title }}">
+          {{ end }}
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+              {{ .Date.Format "2006.01.02" }}
+            </time>
+          {{ if .Params.hideTitle }}
+          </a>
+          {{ end }}
+        </p>
+
+        {{ if not .Params.hideTitle }}
+          <h2>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
+        {{ end }}
+      </header>
+
+      <div class="single-content note-content">
+        {{ if in .RawContent "<!--more-->" }}
+          {{ .Summary }}
+          <p>
+            <a href="{{ .RelPermalink }}">继续阅读 →</a>
+          </p>
+        {{ else }}
+          {{ .Content }}
+        {{ end }}
+      </div>
+    </article>
+
+  {{ else }}
+    <p>还没有随笔。</p>
+  {{ end }}
+
+  {{ partial "blog-pagination.html" (dict "paginator" $paginator "notes" true) }}
+{{ end }}

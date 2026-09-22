@@ -1,0 +1,8 @@
+{{ if ne .Site.Params.showFooter false }}
+  {{ partial "functions/get_hook.html" (dict "hook" "footer_start" "context" .) }}
+  {{ with .Site.Params.footerContent }}
+    <p>{{ . | markdownify }}</p>
+  {{ else }}
+    <p>以文字记录 · 由 <a href="https://gohugo.io/">Hugo</a> 与 <a href="https://github.com/tomfran/typo">Typo</a> 构建</p>
+  {{ end }}
+{{ end }}

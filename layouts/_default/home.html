@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <div class="list-container essay-index">
+    <h1>{{ .Title }}</h1>
+    {{ with .Site.GetPage "/essays" }}
+      {{ .Content }}
+    {{ end }}
+
+    {{ $pages := where .Site.RegularPages "Section" "essays" }}
+    {{ $pageSize := .Site.Params.paginationSize | default 10 }}
+    {{ $paginator := .Paginate $pages.ByDate.Reverse $pageSize }}
+    {{ partial "essay-entries.html" $paginator.Pages }}
+    {{ partial "blog-pagination.html" (dict "paginator" $paginator) }}
+  </div>
+{{ end }}

@@ -1,0 +1,19 @@
+<div class="header blog-header">
+  {{ if or (not (.Param "hideHeader")) .IsHome }}
+    <div class="header-title">
+      <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+    </div>
+
+    <nav class="header-menu" aria-label="主导航">
+      {{ $page := . }}
+      {{ range .Site.Params.menu }}
+        {{ $active := or (and (eq .identifier "essays") $page.IsHome) (eq .identifier $page.Section) (eq ($page.RelPermalink) (.url | relURL)) }}
+        <a class="menu-link{{ if $active }} is-active{{ end }}"
+           href="{{ .url | relURL }}"
+           {{ if $active }}aria-current="{{ if $page.IsPage }}location{{ else }}page{{ end }}"{{ end }}>
+          <span class="menu-slash" aria-hidden="true">/</span>{{ .name }}
+        </a>
+      {{ end }}
+    </nav>
+  {{ end }}
+</div>

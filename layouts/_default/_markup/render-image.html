@@ -1,0 +1,22 @@
+{{- $url := urls.Parse .Destination -}}
+{{- $src := .Destination -}}
+{{- $resource := false -}}
+{{- if not $url.IsAbs -}}
+  {{- $path := strings.TrimPrefix "./" $url.Path -}}
+  {{- $resource = .Page.Resources.GetMatch $path -}}
+  {{- if not $resource -}}
+    {{- with .Page.Parent -}}{{- $resource = .Resources.GetMatch $path -}}{{- end -}}
+  {{- end -}}
+  {{- if not $resource -}}{{- $resource = resources.Get $path -}}{{- end -}}
+  {{- if $resource -}}
+    {{- $src = $resource.RelPermalink -}}
+  {{- else -}}
+    {{- $src = $url.Path | relURL -}}
+  {{- end -}}
+  {{- with $url.RawQuery -}}{{- $src = printf "%s?%s" $src . -}}{{- end -}}
+{{- end -}}
+<figure>
+  <img src="{{ $src | safeURL }}" alt="{{ .Text | plainify }}" loading="lazy" decoding="async"
+    {{- with $resource }}{{ if and (eq .ResourceType "image") (ne .MediaType.SubType "svg") }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}{{ end }}>
+  {{- with .Title }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

@@ -1,0 +1,12 @@
+:root {
+  --content-primary-light: #292722;
+  --content-secondary-light: #6c665d;
+  --background-light: #faf9f6;
+  --code-background-light: #f0eee8;
+  --code-border-light: #dedad1;
+  --content-primary-dark: #e4e0d9;
+  --content-secondary-dark: #aaa397;
+  --background-dark: #191816;
+  --code-background-dark: #24221f;
+  --code-border-dark: #3c3832;
+}

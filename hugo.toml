@@ -1,0 +1,59 @@
+baseURL = 'https://zhouermao.github.io/'
+locale = 'zh-CN'
+languageCode = 'zh-CN'
+title = '周成泽的博客'
+theme = 'typo'
+hasCJKLanguage = true
+timeZone = 'Asia/Shanghai'
+
+# 实质更新日期由你手动维护。
+# 未填写 lastmod 时，使用首次发布日期。
+[frontmatter]
+lastmod = ['lastmod', 'date']
+
+[taxonomies]
+tag = 'tags'
+
+[params]
+description = '总有些需要记录的东西，就把他们写下来吧'
+theme = 'auto'
+colorPalette = 'paper'
+hideHeader = false
+
+readTime = false
+showTags = false
+hidePagination = true
+singleDateFormat = '2006.01.02'
+listDateFormat = '2006.01.02'
+paginationSize = 10
+
+[[params.menu]]
+name = '文集'
+identifier = 'essays'
+url = '/'
+
+[[params.menu]]
+name = '随笔'
+identifier = 'notes'
+url = '/notes/'
+
+[[params.menu]]
+name = '自述'
+identifier = 'about'
+url = '/about/'
+
+[markup.highlight]
+noClasses = false
+
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 3
+ordered = false
+
+# 允许在 Markdown 段落后添加 {.text-small} 等样式属性。
+[markup.goldmark.parser]
+wrapStandAloneImageWithinParagraph = false
+
+[markup.goldmark.parser.attribute]
+block = true
+title = true

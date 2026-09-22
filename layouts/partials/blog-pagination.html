@@ -1,0 +1,8 @@
+{{ $p := .paginator }}
+{{ if gt $p.TotalPages 1 }}
+<nav class="blog-pagination" aria-label="文章分页">
+  <span>{{ if $p.HasPrev }}<a href="{{ $p.Prev.URL }}">← {{ if .notes }}较新的随笔{{ else }}上一页{{ end }}</a>{{ end }}</span>
+  <span class="entry-meta">{{ $p.PageNumber }} / {{ $p.TotalPages }}</span>
+  <span>{{ if $p.HasNext }}<a href="{{ $p.Next.URL }}">{{ if .notes }}更早的随笔{{ else }}下一页{{ end }} →</a>{{ end }}</span>
+</nav>
+{{ end }}
