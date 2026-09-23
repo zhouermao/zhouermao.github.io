@@ -1,0 +1,1 @@
+(()=>{const t=document.querySelector("[data-back-to-top]");if(!t)return;const n=document.querySelector(".reading-page"),e=()=>{const e=n.getBoundingClientRect().bottom+window.scrollY;t.hidden=e<=window.innerHeight};e(),window.addEventListener("resize",e,{passive:!0}),"ResizeObserver"in window&&new ResizeObserver(e).observe(n),document.fonts&&document.fonts.ready.then(e)})()
