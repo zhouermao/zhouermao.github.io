@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/窗.md",
+                "file": "content/essays/故事.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "窗"
+              "title": "故事"
             }
           }
         ],
@@ -205,8 +205,9 @@
   },
   "active": "9a1d974bc03a8ef7",
   "lastOpenFiles": [
-    "content/notes/日记.md",
     "content/notes/窗.md",
+    "docs/assets/combined.min.2020ed68ed277de7ff1ef961f7df15872bbcd6eeda7cf497b128951ce518b537.css",
+    "content/notes/日记.md",
     "content/notes/主体与客体.md",
     "每次更新时构建的命令.md",
     "docs/writing/diary/index.html",
