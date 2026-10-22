@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4356f25767ac639b",
+        "id": "8b181f6dac225d09",
         "type": "tabs",
         "children": [
           {
-            "id": "1a5f77867873c13e",
+            "id": "999e2b9a6d921494",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "日记"
             }
-          },
-          {
-            "id": "9a1d974bc03a8ef7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/essays/故事.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "故事"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -94,7 +79,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -203,11 +189,12 @@
       "bases:新建数据库": false
     }
   },
-  "active": "9a1d974bc03a8ef7",
+  "active": "999e2b9a6d921494",
   "lastOpenFiles": [
+    "content/notes/日记.md",
+    "content/essays/故事.md",
     "content/notes/窗.md",
     "docs/assets/combined.min.2020ed68ed277de7ff1ef961f7df15872bbcd6eeda7cf497b128951ce518b537.css",
-    "content/notes/日记.md",
     "content/notes/主体与客体.md",
     "每次更新时构建的命令.md",
     "docs/writing/diary/index.html",
@@ -215,7 +202,6 @@
     "content/about_draft.md",
     "content/about.md",
     "content/essays/learning.md",
-    "content/essays/故事.md",
     "content/notes/未命名.md",
     "content/_index.md",
     "WRITING.md"
